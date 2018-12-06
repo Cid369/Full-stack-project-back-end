@@ -1,4 +1,4 @@
-<% project_name = 'rails-api-template' %>
+<% project_name = 'street_fighter_ii' %>
 
 default: &default
   adapter: postgresql
@@ -7,8 +7,8 @@ default: &default
 
 development:
   <<: *default
-  database: <%= project_name %>_development
+  database: <%= street_fighter_ii %>_development
 
 test:
   <<: *default
-  database: <%= project_name %>_test
+  database: <%= street_fighter_ii %>_test
