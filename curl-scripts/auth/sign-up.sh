@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# curl "http://localhost:4741/sign-up" \
-curl "http://localhost:7165/sign-up" \
+curl "http://localhost:4741/sign-up" \
+# curl "http://localhost:7165/sign-up" \
 
   --include \
   --request POST \
