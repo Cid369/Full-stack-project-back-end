@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CharactersController < ApplicationController
+class CharactersController < OpenReadController
   before_action :set_character, only: %i[show update destroy]
 
   # GET /characters
