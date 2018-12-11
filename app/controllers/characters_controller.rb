@@ -17,7 +17,7 @@ class CharactersController < OpenReadController
 
   # POST /characters
   def create
-    @character = Character.build(character_params)
+    @character = current_user.characters.build(character_params)
 
     if @character.save
       render json: @character, status: :created, location: @character
