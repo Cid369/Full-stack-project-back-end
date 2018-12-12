@@ -28,6 +28,8 @@ class CharactersController < OpenReadController
 
   # PATCH/PUT /characters/1
   def update
+    @character =
+      current_user.characters.update(character_params)
     if @character.update(character_params)
       render json: @character
     else
