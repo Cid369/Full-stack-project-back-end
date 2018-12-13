@@ -39,7 +39,9 @@ class CharactersController < OpenReadController
 
   # DELETE /characters/1
   def destroy
+    @character = current_user.character.find(params[:id])
     @character.destroy
+    head :no_content
   end
 
   private
