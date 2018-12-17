@@ -5,7 +5,7 @@ class CharactersController < OpenReadController
 
   # GET /characters
   def index
-    @characters = Character.all
+    @characters = current_user.characters
 
     render json: @characters
   end
@@ -28,9 +28,8 @@ class CharactersController < OpenReadController
 
   # PATCH/PUT /characters/1
   def update
-    @character =
-      current_user.characters.update(character_params)
-    if @character.update(character_params)
+    @character.update(character_params)
+    if @character.save
       render json: @character
     else
       render json: @character.errors, status: :unprocessable_entity
