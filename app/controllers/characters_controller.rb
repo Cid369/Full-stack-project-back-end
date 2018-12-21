@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CharactersController < OpenReadController
+class CharactersController < ProtectedController
   before_action :set_character, only: %i[show update destroy]
 
   # GET /characters
@@ -12,6 +12,8 @@ class CharactersController < OpenReadController
 
   # GET /characters/1
   def show
+    @characters = current_user.characters
+
     render json: @character
   end
 
