@@ -12,8 +12,8 @@ class ApplicationController < ActionController::API
   AUTH_PROC = proc do |signed_token, _opts|
     token = begin
       Rails.application.message_verifier(:signed_token).verify(signed_token)
-  rescue ActiveSupport::MessageVerifier::InvalidSignature
-    false
+    rescue ActiveSupport::MessageVerifier::InvalidSignature
+      false
     end
     User.find_by token: token
   end

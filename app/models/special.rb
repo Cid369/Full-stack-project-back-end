@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
-class Character < ApplicationRecord
-  belongs_to :user
-  has_many :specials
+class Special < ApplicationRecord
+  belongs_to :character
   # validates :text, :user, presence: true
 end
